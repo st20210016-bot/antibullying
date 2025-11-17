@@ -42,11 +42,15 @@
       <h2>Make Your Pledge</h2>
       <p>
         By taking this pledge, you are promising to help make SAIS a safe and welcoming place
-        for everyone. Your pledge is saved in this browser only – it is a personal reminder
-        of your choice to be kind.
+        for everyone. Your pledge is recorded in a shared counter so our whole school community
+        can see how many students have committed to kindness.
       </p>
 
-      <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:10px;">
+      <div id="pledge-counter" class="pledge-counter">
+        💙 <strong id="pledge-number">50</strong> students have taken the pledge so far.
+      </div>
+
+      <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:10px;">
         <button id="pledge-kindness" class="btn-primary">
           I Pledge to Be Kind
         </button>
@@ -56,7 +60,7 @@
       </div>
 
       <p id="pledge-message" class="success-message" style="display:none; margin-top:14px;">
-        ✅ Thank you for taking the pledge. Your choice has been saved on this device.
+        ✅ Thank you for taking the pledge. Your choice has been recorded.
       </p>
     </section>
 
@@ -67,28 +71,33 @@
         <li>I will not join in with bullying, teasing, or spreading rumours.</li>
         <li>I will support classmates who are being left out or targeted.</li>
         <li>I will report bullying to a trusted adult at school.</li>
-        <li>I will think before I post, comment, or share anything online.</li>
+        <li>I will think carefully before I post, comment, or share anything online.</li>
       </ul>
     </section>
 
   </main>
 
   <footer>
-    © 2024 SAIS Anti-Bullying Campaign<br>
-    <span style="font-size:0.9rem; color:#647481;">
-      Made by: <strong>Khalid Shahin</strong>, <strong>Hassan Alaa</strong>, 
-      <strong>Saif Alaa</strong>, <strong>Mohammed Mereb</strong>
-    </span>
+    © 2024 SAIS Anti-Bullying Campaign
   </footer>
 
   <script>
-    // Simple local pledge saving
     const btnKind = document.getElementById('pledge-kindness');
     const btnStand = document.getElementById('pledge-standup');
     const msg = document.getElementById('pledge-message');
+    const pledgeNum = document.getElementById('pledge-number');
 
-    function markPledged() {
-      localStorage.setItem('saisPledgeTaken', 'true');
+    // 🔹 FILL THESE IN WITH YOUR REAL VALUES 🔹
+    const BIN_ID = '691b514743b1c97be9b38322';          // e.g. '66f1234567890abcd'
+    const MASTER_KEY = '$2a$10$/HRjC7rGM4sRC4wsfJKDI.T.KHbT8LLqWuBQ9YpXZafxgoQTvPhnW';  // your X-Master-Key from JSONBin
+
+    const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+    const STARTING_PLEDGES = 50;
+
+    let totalPledges = STARTING_PLEDGES;
+    let alreadyPledged = localStorage.getItem('saisPledgeTaken') === 'true';
+
+    function lockButtons() {
       msg.style.display = 'block';
       btnKind.textContent = 'Pledge Completed ✔';
       btnStand.textContent = 'Pledge Completed ✔';
@@ -98,13 +107,75 @@
       btnStand.style.opacity = '0.8';
     }
 
-    // On load, check if already pledged
-    if (localStorage.getItem('saisPledgeTaken') === 'true') {
-      markPledged();
+    // Load global pledges from JSONBin
+    async function loadPledges() {
+      try {
+        const res = await fetch(BIN_URL, {
+          headers: {
+            'X-Master-Key': MASTER_KEY
+          }
+        });
+        const data = await res.json();
+        // JSONBin v3 returns { record: { pledges: ... }, ... }
+        totalPledges = (data.record && typeof data.record.pledges === 'number')
+          ? data.record.pledges
+          : STARTING_PLEDGES;
+
+        pledgeNum.textContent = totalPledges;
+      } catch (err) {
+        console.error('Error loading pledges:', err);
+        pledgeNum.textContent = totalPledges;
+      }
+
+      if (alreadyPledged) {
+        lockButtons();
+      }
     }
 
-    btnKind.addEventListener('click', markPledged);
-    btnStand.addEventListener('click', markPledged);
+    // Update global pledges in JSONBin
+    async function updatePledges() {
+      const newTotal = totalPledges + 1;
+
+      try {
+        const res = await fetch(BIN_URL, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Master-Key': MASTER_KEY
+          },
+          body: JSON.stringify({ pledges: newTotal })
+        });
+
+        if (!res.ok) {
+          throw new Error('Failed to update bin');
+        }
+
+        totalPledges = newTotal;
+        pledgeNum.textContent = totalPledges;
+      } catch (err) {
+        console.error('Error updating pledges:', err);
+        alert('There was a problem saving your pledge. Please try again later.');
+      }
+    }
+
+    async function takePledge() {
+      if (alreadyPledged) {
+        lockButtons();
+        return;
+      }
+
+      await updatePledges();
+
+      alreadyPledged = true;
+      localStorage.setItem('saisPledgeTaken', 'true');
+      lockButtons();
+    }
+
+    btnKind.addEventListener('click', takePledge);
+    btnStand.addEventListener('click', takePledge);
+
+    // Load initial value when page opens
+    loadPledges();
   </script>
 
 </body>
