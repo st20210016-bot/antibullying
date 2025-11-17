@@ -350,3 +350,91 @@ footer{
     padding:18px 16px 20px;
   }
 }
+
+
+/* ===== Buttons ===== */
+
+.btn-primary {
+  display:inline-block;
+  padding:10px 18px;
+  background:var(--sais-teal);
+  color:#ffffff;
+  border:none;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+  transition:background 0.2s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.btn-primary:hover {
+  background:var(--sais-teal-light);
+  transform:translateY(-1px);
+  box-shadow:0 6px 14px rgba(15,118,132,0.35);
+}
+
+.btn-primary:disabled {
+  cursor:default;
+}
+
+.btn-outline {
+  display:inline-block;
+  padding:10px 18px;
+  background:transparent;
+  color:var(--sais-teal);
+  border:2px solid var(--sais-teal);
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  text-decoration:none;
+  transition:background 0.2s ease-out, color 0.2s ease-out, transform 0.15s ease-out;
+}
+
+.btn-outline:hover {
+  background:var(--sais-teal-soft);
+  color:var(--sais-dark);
+  transform:translateY(-1px);
+}
+
+/* ===== Forms ===== */
+
+.form-row {
+  margin-bottom:12px;
+}
+
+.form-row label {
+  display:block;
+  font-weight:600;
+  font-size:0.9rem;
+  margin-bottom:4px;
+  color:var(--sais-dark);
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width:100%;
+  padding:9px 10px;
+  border-radius:10px;
+  border:1px solid rgba(148,163,184,0.8);
+  font-size:0.95rem;
+  font-family:inherit;
+}
+
+.form-row textarea {
+  resize:vertical;
+}
+
+.success-message {
+  font-size:0.95rem;
+  color:#166534;
+  background:#dcfce7;
+  border-radius:10px;
+  padding:8px 10px;
+}
+
+.small-note {
+  margin-top:10px;
+  font-size:0.85rem;
+  color:var(--text-muted);
+}
