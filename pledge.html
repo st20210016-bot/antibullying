@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindness Pledge – SAIS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page">
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="index.html"><img src="images.jpeg" alt="SAIS Logo"></a>
+      <span>SAIS</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="impact.html">Impact</a></li>
+      <li><a href="types.html">Types</a></li>
+      <li><a href="stop.html">Stop Bullying</a></li>
+      <li><a href="uae.html">UAE Law</a></li>
+      <li><a href="kinder.html">Kinder World</a></li>
+      <li><a href="policy.html">School Policy</a></li>
+      <li><a href="pledge.html" class="active">Pledge</a></li>
+      <li><a href="report.html">Report Bullying</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero fade-up">
+    <h1>SAIS Kindness & Anti-Bullying Pledge</h1>
+    <p>One click is a promise to stand up, speak out, and support others.</p>
+    <div class="hero-tags">
+      <span class="tag-pill">Commitment</span>
+      <span class="tag-pill">Respect</span>
+      <span class="tag-pill">Action</span>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <section class="card fade-up delay-1">
+      <h2>Make Your Pledge</h2>
+      <p>
+        By taking this pledge, you are promising to help make SAIS a safe and welcoming place
+        for everyone. Your pledge is saved in this browser only – it is a personal reminder
+        of your choice to be kind.
+      </p>
+
+      <div style="margin-top:16px; display:flex; flex-wrap:wrap; gap:10px;">
+        <button id="pledge-kindness" class="btn-primary">
+          I Pledge to Be Kind
+        </button>
+        <button id="pledge-standup" class="btn-outline">
+          I Pledge to Stand Up Against Bullying
+        </button>
+      </div>
+
+      <p id="pledge-message" class="success-message" style="display:none; margin-top:14px;">
+        ✅ Thank you for taking the pledge. Your choice has been saved on this device.
+      </p>
+    </section>
+
+    <section class="card fade-up delay-2">
+      <h2>What This Pledge Means</h2>
+      <ul>
+        <li>I will treat others with respect, both in person and online.</li>
+        <li>I will not join in with bullying, teasing, or spreading rumours.</li>
+        <li>I will support classmates who are being left out or targeted.</li>
+        <li>I will report bullying to a trusted adult at school.</li>
+        <li>I will think before I post, comment, or share anything online.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2024 SAIS Anti-Bullying Campaign<br>
+    <span style="font-size:0.9rem; color:#647481;">
+      Made by: <strong>Khalid Shahin</strong>, <strong>Hassan Alaa</strong>, 
+      <strong>Saif Alaa</strong>, <strong>Mohammed Mereb</strong>
+    </span>
+  </footer>
+
+  <script>
+    // Simple local pledge saving
+    const btnKind = document.getElementById('pledge-kindness');
+    const btnStand = document.getElementById('pledge-standup');
+    const msg = document.getElementById('pledge-message');
+
+    function markPledged() {
+      localStorage.setItem('saisPledgeTaken', 'true');
+      msg.style.display = 'block';
+      btnKind.textContent = 'Pledge Completed ✔';
+      btnStand.textContent = 'Pledge Completed ✔';
+      btnKind.disabled = true;
+      btnStand.disabled = true;
+      btnKind.style.opacity = '0.8';
+      btnStand.style.opacity = '0.8';
+    }
+
+    // On load, check if already pledged
+    if (localStorage.getItem('saisPledgeTaken') === 'true') {
+      markPledged();
+    }
+
+    btnKind.addEventListener('click', markPledged);
+    btnStand.addEventListener('click', markPledged);
+  </script>
+
+</body>
+</html>
