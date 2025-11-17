@@ -348,7 +348,21 @@ footer{
 
   .card{
     padding:18px 16px 20px;
+
+
   }
+
+.info-list {
+  list-style-type: disc;
+  padding-left: 24px;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-top: 12px;
+}
+
+.info-list li strong {
+  color: var(--sais-teal);
+}
 }
 
 
