@@ -249,13 +249,34 @@ body {
   border:1px solid rgba(15,118,132,0.25);
 }
 
-/* callout (used on UAE page) */
+/* callout (used on UAE / policy page) */
 .callout{
   margin-top:12px;
   padding:12px 14px;
   border-radius:var(--radius-md);
   background:#e7f5f8;
   border:1px solid rgba(15,118,132,0.35);
+}
+
+/* simple table for policy page */
+.policy-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:10px;
+  font-size:0.95rem;
+}
+
+.policy-table th,
+.policy-table td{
+  border:1px solid rgba(148,163,184,0.6);
+  padding:8px 10px;
+  vertical-align:top;
+}
+
+.policy-table th{
+  background:#eef7f9;
+  color:var(--sais-dark);
+  text-align:left;
 }
 
 /* ======================
