@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kindness Pledge – SAIS</title>
+  <title>Kindness Pledge – SAIS Anti-Bullying Campaign</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page">
 
@@ -13,65 +14,115 @@
       <a href="index.html"><img src="images.jpeg" alt="SAIS Logo"></a>
       <span>SAIS</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="impact.html">Impact</a></li>
-      <li><a href="types.html">Types</a></li>
-      <li><a href="stop.html">Stop Bullying</a></li>
-      <li><a href="uae.html">UAE Law</a></li>
-      <li><a href="kinder.html">Kinder World</a></li>
-      <li><a href="policy.html">School Policy</a></li>
-      <li><a href="pledge.html" class="active">Pledge</a></li>
-    </ul>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="types.html">Types</a></li>
+        <li><a href="stop.html">Stop Bullying</a></li>
+        <li><a href="uae.html">UAE Law</a></li>
+        <li><a href="kinder.html">Kinder World</a></li>
+        <li><a href="policy.html">School Policy</a></li>
+        <li><a href="pledge.html" class="active">Pledge</a></li>
+        <li><a href="report.html">Report Bullying</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn">🌙 / ☀</button>
+        <button id="langEnBtn" class="nav-toggle-btn active">EN</button>
+        <button id="langArBtn" class="nav-toggle-btn">ع</button>
+      </div>
+    </div>
   </nav>
 
   <header class="hero fade-up">
-    <h1>SAIS Kindness & Anti-Bullying Pledge</h1>
-    <p>One click is a promise to stand up, speak out, and support others.</p>
-    <div class="hero-tags">
-      <span class="tag-pill">Commitment</span>
-      <span class="tag-pill">Respect</span>
-      <span class="tag-pill">Action</span>
+    <div class="lang-en">
+      <h1>SAIS Kindness Pledge</h1>
+      <p>Join the campaign: commit to speak up, be kind, and refuse to tolerate bullying.</p>
+    </div>
+    <div class="lang-ar">
+      <h1>تعهّد اللطف في SAIS</h1>
+      <p>انضم إلى الحملة: تعهّد بأن تدافع عن الآخرين، وتكون لطيفًا، وترفض التنمّر.</p>
     </div>
   </header>
 
   <main class="main-content">
 
     <section class="card fade-up delay-1">
-      <h2>Make Your Pledge</h2>
-      <p>
-        By taking this pledge, you are promising to help make SAIS a safe and welcoming place
-        for everyone. Your pledge is recorded in a shared counter so our whole school community
-        can see how many students have committed to kindness.
-      </p>
-
-      <div id="pledge-counter" class="pledge-counter">
-        💙 <strong id="pledge-number">50</strong> students have taken the pledge so far.
+      <div class="pledge-counter">
+        <span class="lang-en">
+          <span id="pledgeCount">–</span> students have already taken the SAIS Kindness Pledge.
+        </span>
+        <span class="lang-ar">
+          <span id="pledgeCountAr">–</span> طالبًا قدّموا تعهّد اللطف في SAIS حتى الآن.
+        </span>
       </div>
 
-      <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:10px;">
-        <button id="pledge-kindness" class="btn-primary">
-          I Pledge to Be Kind
-        </button>
-        <button id="pledge-standup" class="btn-outline">
-          I Pledge to Stand Up Against Bullying
-        </button>
+      <div class="columns">
+        <div>
+          <div class="lang-en">
+            <h2>What You Are Pledging</h2>
+            <ul>
+              <li>To treat others with respect, in person and online.</li>
+              <li>To speak up or seek help when you see bullying.</li>
+              <li>To refuse to share or like harmful posts or rumours.</li>
+              <li>To include others and support students who feel left out.</li>
+            </ul>
+          </div>
+          <div class="lang-ar">
+            <h2>بماذا تتعهّد؟</h2>
+            <ul>
+              <li>أن تعامل الآخرين باحترام داخل المدرسة وعبر الإنترنت.</li>
+              <li>أن تتحدث أو تطلب المساعدة عندما ترى التنمّر.</li>
+              <li>أن ترفض مشاركة أو دعم منشورات أو شائعات مؤذية.</li>
+              <li>أن تشمل الآخرين وتدعم الطلاب الذين يشعرون بالعزلة.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <form id="pledgeForm">
+            <div class="form-row">
+              <label for="pledgeName">Name (optional)</label>
+              <input type="text" id="pledgeName" name="name" placeholder="You may leave this blank">
+            </div>
+
+            <div class="form-row">
+              <label for="pledgeGrade">Grade</label>
+              <select id="pledgeGrade" name="grade" required>
+                <option value="">Select your grade</option>
+                <option>Grade 7</option>
+                <option>Grade 8</option>
+                <option>Grade 9</option>
+                <option>Grade 10</option>
+                <option>Grade 11</option>
+                <option>Grade 12</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label>
+                <input type="checkbox" id="pledgeAgree" required>
+                <span class="lang-en">I understand and agree to this pledge.</span>
+                <span class="lang-ar">أفهم هذا التعهّد وأوافق عليه.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-primary">Take the Pledge</button>
+
+            <p id="pledgeMessage" class="small-note"></p>
+          </form>
+
+          <p class="small-note lang-en" style="margin-top:10px;">
+            Your name is optional. The number shown above is a shared school counter from our online database.
+          </p>
+          <p class="small-note lang-ar" style="margin-top:10px;">
+            كتابة الاسم اختيارية. الرقم المعروض في الأعلى هو عدّاد مشترك على مستوى المدرسة من قاعدة بيانات إلكترونية.
+          </p>
+        </div>
       </div>
-
-      <p id="pledge-message" class="success-message" style="display:none; margin-top:14px;">
-        ✅ Thank you for taking the pledge. Your choice has been recorded.
-      </p>
-    </section>
-
-    <section class="card fade-up delay-2">
-      <h2>What This Pledge Means</h2>
-      <ul>
-        <li>I will treat others with respect, both in person and online.</li>
-        <li>I will not join in with bullying, teasing, or spreading rumours.</li>
-        <li>I will support classmates who are being left out or targeted.</li>
-        <li>I will report bullying to a trusted adult at school.</li>
-        <li>I will think carefully before I post, comment, or share anything online.</li>
-      </ul>
     </section>
 
   </main>
@@ -81,60 +132,31 @@
   </footer>
 
   <script>
-    const btnKind = document.getElementById('pledge-kindness');
-    const btnStand = document.getElementById('pledge-standup');
-    const msg = document.getElementById('pledge-message');
-    const pledgeNum = document.getElementById('pledge-number');
-
-    // 🔹 FILL THESE IN WITH YOUR REAL VALUES 🔹
-    const BIN_ID = '691b514743b1c97be9b38322';          // e.g. '66f1234567890abcd'
-    const MASTER_KEY = '$2a$10$/HRjC7rGM4sRC4wsfJKDI.T.KHbT8LLqWuBQ9YpXZafxgoQTvPhnW';  // your X-Master-Key from JSONBin
-
+    // ---- JSONBin configuration (YOU must fill these) ----
+    const BIN_ID = '691b514743b1c97be9b38322';          // e.g. "66f1234abcd..."
+    const MASTER_KEY = '$2a$10$/HRjC7rGM4sRC4wsfJKDI.T.KHbT8LLqWuBQ9YpXZafxgoQTvPhnW';  // your X-Master-Key
     const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
-    const STARTING_PLEDGES = 50;
+    let currentPledgeCount = 0;
 
-    let totalPledges = STARTING_PLEDGES;
-    let alreadyPledged = localStorage.getItem('saisPledgeTaken') === 'true';
-
-    function lockButtons() {
-      msg.style.display = 'block';
-      btnKind.textContent = 'Pledge Completed ✔';
-      btnStand.textContent = 'Pledge Completed ✔';
-      btnKind.disabled = true;
-      btnStand.disabled = true;
-      btnKind.style.opacity = '0.8';
-      btnStand.style.opacity = '0.8';
-    }
-
-    // Load global pledges from JSONBin
     async function loadPledges() {
       try {
         const res = await fetch(BIN_URL, {
-          headers: {
-            'X-Master-Key': MASTER_KEY
-          }
+          headers: { 'X-Master-Key': MASTER_KEY }
         });
         const data = await res.json();
-        // JSONBin v3 returns { record: { pledges: ... }, ... }
-        totalPledges = (data.record && typeof data.record.pledges === 'number')
+        currentPledgeCount = (data.record && typeof data.record.pledges === 'number')
           ? data.record.pledges
-          : STARTING_PLEDGES;
-
-        pledgeNum.textContent = totalPledges;
+          : 0;
+        document.getElementById('pledgeCount').textContent = currentPledgeCount;
+        document.getElementById('pledgeCountAr').textContent = currentPledgeCount;
       } catch (err) {
         console.error('Error loading pledges:', err);
-        pledgeNum.textContent = totalPledges;
-      }
-
-      if (alreadyPledged) {
-        lockButtons();
+        document.getElementById('pledgeCount').textContent = '–';
+        document.getElementById('pledgeCountAr').textContent = '–';
       }
     }
 
-    // Update global pledges in JSONBin
-    async function updatePledges() {
-      const newTotal = totalPledges + 1;
-
+    async function savePledges(newCount) {
       try {
         const res = await fetch(BIN_URL, {
           method: 'PUT',
@@ -142,39 +164,94 @@
             'Content-Type': 'application/json',
             'X-Master-Key': MASTER_KEY
           },
-          body: JSON.stringify({ pledges: newTotal })
+          body: JSON.stringify({ pledges: newCount })
         });
+        await res.json();
+      } catch (err) {
+        console.error('Error saving pledges:', err);
+      }
+    }
 
-        if (!res.ok) {
-          throw new Error('Failed to update bin');
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('themeToggle');
+      const langEnBtn = document.getElementById('langEnBtn');
+      const langArBtn = document.getElementById('langArBtn');
+      const form = document.getElementById('pledgeForm');
+      const messageEl = document.getElementById('pledgeMessage');
+
+      // THEME
+      function applyTheme(theme) {
+        if (theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      }
+      const savedTheme = localStorage.getItem('saisTheme') || 'light';
+      applyTheme(savedTheme);
+      if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+        themeToggle.addEventListener('click', () => {
+          const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('saisTheme', next);
+          applyTheme(next);
+          themeToggle.textContent = next === 'dark' ? '☀' : '🌙';
+        });
+      }
+
+      // LANGUAGE
+      function applyLang(lang) {
+        if (lang === 'ar') document.body.classList.add('lang-ar');
+        else document.body.classList.remove('lang-ar');
+
+        if (langEnBtn && langArBtn) {
+          if (lang === 'ar') {
+            langArBtn.classList.add('active');
+            langEnBtn.classList.remove('active');
+          } else {
+            langEnBtn.classList.add('active');
+            langArBtn.classList.remove('active');
+          }
+        }
+      }
+      const savedLang = localStorage.getItem('saisLang') || 'en';
+      applyLang(savedLang);
+      if (langEnBtn) langEnBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'en');
+        applyLang('en');
+      });
+      if (langArBtn) langArBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'ar');
+        applyLang('ar');
+      });
+
+      // Load existing pledge count
+      loadPledges();
+
+      // Handle pledge form
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        messageEl.textContent = '';
+
+        // Simple frontend validation
+        const grade = document.getElementById('pledgeGrade').value;
+        const agree = document.getElementById('pledgeAgree').checked;
+        if (!grade || !agree) {
+          messageEl.style.color = '#b91c1c';
+          messageEl.textContent = 'Please select your grade and agree to the pledge.';
+          return;
         }
 
-        totalPledges = newTotal;
-        pledgeNum.textContent = totalPledges;
-      } catch (err) {
-        console.error('Error updating pledges:', err);
-        alert('There was a problem saving your pledge. Please try again later.');
-      }
-    }
+        const newCount = currentPledgeCount + 1;
+        currentPledgeCount = newCount;
+        document.getElementById('pledgeCount').textContent = newCount;
+        document.getElementById('pledgeCountAr').textContent = newCount;
 
-    async function takePledge() {
-      if (alreadyPledged) {
-        lockButtons();
-        return;
-      }
+        messageEl.style.color = '#166534';
+        messageEl.textContent = 'Thank you for taking the pledge. Your commitment has been added.';
+        form.reset();
 
-      await updatePledges();
-
-      alreadyPledged = true;
-      localStorage.setItem('saisPledgeTaken', 'true');
-      lockButtons();
-    }
-
-    btnKind.addEventListener('click', takePledge);
-    btnStand.addEventListener('click', takePledge);
-
-    // Load initial value when page opens
-    loadPledges();
+        await savePledges(newCount);
+      });
+    });
   </script>
 
 </body>
