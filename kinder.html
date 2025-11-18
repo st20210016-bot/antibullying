@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creating a Kinder World – SAIS</title>
+  <title>Creating a Kinder World – SAIS Anti-Bullying Campaign</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page">
 
@@ -13,67 +14,175 @@
       <a href="index.html"><img src="images.jpeg" alt="SAIS Logo"></a>
       <span>SAIS</span>
     </div>
-    <ul class="nav-links">
-  <li><a href="about.html">About</a></li>
-  <li><a href="impact.html">Impact</a></li>
-  <li><a href="types.html">Types</a></li>
-  <li><a href="stop.html">Stop Bullying</a></li>
-  <li><a href="uae.html">UAE Law</a></li>
-  <li><a href="kinder.html">Kinder World</a></li>
-  <li><a href="policy.html">School Policy</a></li>
-  <li><a href="pledge.html">Pledge</a></li>
-</ul>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="types.html">Types</a></li>
+        <li><a href="stop.html">Stop Bullying</a></li>
+        <li><a href="uae.html">UAE Law</a></li>
+        <li><a href="kinder.html" class="active">Kinder World</a></li>
+        <li><a href="policy.html">School Policy</a></li>
+        <li><a href="pledge.html">Pledge</a></li>
+        <li><a href="report.html">Report Bullying</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn">🌙 / ☀</button>
+        <button id="langEnBtn" class="nav-toggle-btn active">EN</button>
+        <button id="langArBtn" class="nav-toggle-btn">ع</button>
+      </div>
+    </div>
   </nav>
 
   <header class="hero fade-up">
-    <h1>Creating a Kinder World</h1>
-    <p>Kindness is powerful. Every small action makes a difference.</p>
-    <div class="hero-tags">
-      <span class="tag-pill">Kindness</span>
-      <span class="tag-pill">Inclusion</span>
-      <span class="tag-pill">Community</span>
+    <div class="lang-en">
+      <h1>Creating a Kinder World</h1>
+      <p>Small actions every day can change the culture of a whole school.</p>
+    </div>
+    <div class="lang-ar">
+      <h1>بناء عالم أكثر لطفًا</h1>
+      <p>خطوات بسيطة يوميًا يمكن أن تغيّر ثقافة المدرسة بالكامل.</p>
     </div>
   </header>
 
   <main class="main-content">
+
     <section class="card columns fade-up delay-1">
       <div>
-        <img src="about-kindnessmatter.jpg"
-             class="poster-img"
-             alt="Kindness Matters poster encouraging positivity">
-
-        <h2>What We Can Do at SAIS</h2>
-        <ul>
-          <li>Invite someone who is sitting alone to join you.</li>
-          <li>Use respectful language with everyone, online and offline.</li>
-          <li>Share positive messages instead of negative comments.</li>
-          <li>Join or help organise school kindness and anti-bullying campaigns.</li>
-        </ul>
+        <img src="about-kindnessmatter.jpg" alt="Kindness matters poster" class="poster-img">
       </div>
+      <div>
+        <div class="lang-en">
+          <h2>Why Kindness Matters</h2>
+          <p>
+            Bullying can leave deep and lasting scars, but together we can stop it. When students choose
+            kindness, speak up for others, and include people who are left out, the whole school becomes safer.
+          </p>
+          <ul>
+            <li>Greet classmates and teachers politely.</li>
+            <li>Invite lonely students to join your group.</li>
+            <li>Use positive language in chats and group messages.</li>
+            <li>Celebrate differences instead of making fun of them.</li>
+          </ul>
+        </div>
+        <div class="lang-ar">
+          <h2>لماذا اللطف مهم؟</h2>
+          <p>
+            قد يترك التنمّر آثارًا عميقة ودائمة، لكن يمكننا إيقافه معًا. عندما يختار الطلاب اللطف،
+            ويدافعون عن الآخرين، ويشملون من يتم استبعادهم، تصبح المدرسة مكانًا أكثر أمانًا للجميع.
+          </p>
+          <ul>
+            <li>ابدأ بتحية زملائك ومعلميك باحترام.</li>
+            <li>ادعُ الطلاب الذين يجلسون وحدهم للانضمام إليك.</li>
+            <li>استخدم كلمات إيجابية في المحادثات والرسائل.</li>
+            <li>احتفل بالاختلافات بدل السخرية منها.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card columns fade-up delay-2">
+      <div>
+        <div class="lang-en">
+          <h2>Actions for Students</h2>
+          <ul>
+            <li>Be a positive role model online and offline.</li>
+            <li>Support friends who are going through a difficult time.</li>
+            <li>Stand near someone who is being targeted so they are not alone.</li>
+            <li>Use our Pledge page to formally commit to kind behaviour.</li>
+          </ul>
+        </div>
+        <div class="lang-ar">
+          <h2>أفعال يمكن للطلاب القيام بها</h2>
+          <ul>
+            <li>كن قدوة إيجابية داخل المدرسة وخارجها.</li>
+            <li>قدّم الدعم للأصدقاء الذين يمرّون بوقت صعب.</li>
+            <li>قف بجانب من يتعرض للتنمّر حتى لا يشعر بالوحدة.</li>
+            <li>استخدم صفحة التعهّد لتأكيد التزامك بالسلوك الإيجابي.</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="highlight-box">
-        <h3>Project Ideas</h3>
-        <ul>
-          <li>Create posters or short videos about kindness.</li>
-          <li>Write anonymous “kind notes” to classmates.</li>
-          <li>Design a pledge wall where students sign their commitment to be kind.</li>
-        </ul>
+        <div class="lang-en">
+          <h3>For Teachers and Parents</h3>
+          <p>
+            Adults play a key role in modelling respect and calm conflict resolution. Listening carefully,
+            taking concerns seriously, and praising kind actions all help to build a culture where bullying
+            is less likely to grow.
+          </p>
+        </div>
+        <div class="lang-ar">
+          <h3>للأهل والمعلمين</h3>
+          <p>
+            يلعب الكبار دورًا أساسيًا في إظهار الاحترام وحل الخلافات بهدوء. الاستماع الجيد، وأخذ الشكاوى
+            بجدية، وتشجيع الأفعال الإيجابية يساعد على بناء ثقافة مدرسية تقل فيها فرص انتشار التنمّر.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="card fade-up delay-2">
-      <h2>Your Voice Matters</h2>
-      <p>
-        A kinder world doesn’t start with huge speeches; it starts with everyday choices
-        in classrooms, hallways and chat groups. Your voice, your actions and your courage
-        to speak up all shape what SAIS feels like for everyone.
-      </p>
-      <p>
-        Even one person deciding to include others, stand up against bullying and spread
-        kindness can inspire others to do the same. That is how real change begins.
-      </p>
-    </section>
   </main>
 
-  <footer>© 2025 SAIS Anti-Bullying Campaign</footer>
+  <footer>
+    © 2024 SAIS Anti-Bullying Campaign
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('themeToggle');
+      const langEnBtn = document.getElementById('langEnBtn');
+      const langArBtn = document.getElementById('langArBtn');
+
+      function applyTheme(theme) {
+        if (theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      }
+
+      const savedTheme = localStorage.getItem('saisTheme') || 'light';
+      applyTheme(savedTheme);
+      if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+        themeToggle.addEventListener('click', () => {
+          const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('saisTheme', next);
+          applyTheme(next);
+          themeToggle.textContent = next === 'dark' ? '☀' : '🌙';
+        });
+      }
+
+      function applyLang(lang) {
+        if (lang === 'ar') document.body.classList.add('lang-ar');
+        else document.body.classList.remove('lang-ar');
+
+        if (langEnBtn && langArBtn) {
+          if (lang === 'ar') {
+            langArBtn.classList.add('active');
+            langEnBtn.classList.remove('active');
+          } else {
+            langEnBtn.classList.add('active');
+            langArBtn.classList.remove('active');
+          }
+        }
+      }
+
+      const savedLang = localStorage.getItem('saisLang') || 'en';
+      applyLang(savedLang);
+
+      if (langEnBtn) langEnBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'en');
+        applyLang('en');
+      });
+      if (langArBtn) langArBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'ar');
+        applyLang('ar');
+      });
+    });
+  </script>
+
 </body>
 </html>
