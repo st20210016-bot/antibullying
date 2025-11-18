@@ -5,92 +5,198 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAIS Anti-Bullying Campaign – Home</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page">
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">
       <a href="index.html"><img src="images.jpeg" alt="SAIS Logo"></a>
       <span>SAIS</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="impact.html">Impact</a></li>
-      <li><a href="types.html">Types</a></li>
-      <li><a href="stop.html">Stop Bullying</a></li>
-      <li><a href="uae.html">UAE Law</a></li>
-      <li><a href="kinder.html">Kinder World</a></li>
-      <li><a href="policy.html">School Policy</a></li>
-      <li><a href="pledge.html">Pledge</a></li>
-    </ul>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="types.html">Types</a></li>
+        <li><a href="stop.html">Stop Bullying</a></li>
+        <li><a href="uae.html">UAE Law</a></li>
+        <li><a href="kinder.html">Kinder World</a></li>
+        <li><a href="policy.html">School Policy</a></li>
+        <li><a href="pledge.html">Pledge</a></li>
+        <li><a href="report.html">Report Bullying</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn">🌙 / ☀</button>
+        <button id="langEnBtn" class="nav-toggle-btn active">EN</button>
+        <button id="langArBtn" class="nav-toggle-btn">ع</button>
+      </div>
+    </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero fade-up">
-    <h1>SAIS Anti-Bullying Campaign</h1>
-    <p>Building a school where every student feels safe, respected, and included.</p>
+    <div class="lang-en">
+      <h1>SAIS Anti-Bullying Campaign</h1>
+      <p>Building a school where every student feels safe, respected, and included.</p>
+    </div>
+    <div class="lang-ar">
+      <h1>حملة مكافحة التنمّر في SAIS</h1>
+      <p>معًا نبني مدرسة يشعر فيها كل طالب بالأمان والاحترام والانتماء.</p>
+    </div>
+
     <div class="hero-tags">
-      <span class="tag-pill">Respect</span>
-      <span class="tag-pill">Kindness</span>
-      <span class="tag-pill">Student Voice</span>
+      <span class="tag-pill">
+        <span class="inline-lang en">Respect</span>
+        <span class="inline-lang ar" style="display:none;">الاحترام</span>
+      </span>
+      <span class="tag-pill">
+        <span class="inline-lang en">Kindness</span>
+        <span class="inline-lang ar" style="display:none;">اللطف</span>
+      </span>
+      <span class="tag-pill">
+        <span class="inline-lang en">Student Voice</span>
+        <span class="inline-lang ar" style="display:none;">صوت الطالب</span>
+      </span>
     </div>
   </header>
 
   <main class="main-content">
 
-    <!-- WELCOME CARD -->
-    <section class="card fade-up delay-1">
-      <h2>Welcome</h2>
-      <p>
-        The SAIS Anti-Bullying Campaign is a student-focused initiative that raises awareness,
-        supports those affected by bullying, and promotes positive behaviour across our school.
-      </p>
-      <p>
-        This website explains what bullying is, how it affects people, how the UAE responds to it,
-        and how our school policy deals with different levels of misbehaviour.
-      </p>
+    <section class="card columns fade-up delay-1">
+      <div>
+        <img src="home-photo.jpg" alt="Students walking together happily" class="poster-img">
+      </div>
+      <div>
+        <div class="lang-en">
+          <h2>Welcome</h2>
+          <p>
+            The SAIS Anti-Bullying Campaign is a student-focused initiative that raises awareness,
+            supports those affected by bullying, and promotes positive behaviour across our school.
+          </p>
+          <p>
+            This website explains what bullying is, how it affects people, how the UAE responds to it,
+            and how our school policy deals with different levels of misbehaviour.
+          </p>
+        </div>
+        <div class="lang-ar">
+          <h2>مرحبًا بكم</h2>
+          <p>
+            حملة مكافحة التنمّر في SAIS هي مبادرة يقودها الطلاب لزيادة الوعي، ودعم المتضررين من التنمّر،
+            وتعزيز السلوك الإيجابي في جميع أرجاء المدرسة.
+          </p>
+          <p>
+            يوضّح هذا الموقع معنى التنمّر، وآثاره، وكيف تتعامل دولة الإمارات معه، بالإضافة إلى سياسة المدرسة
+            في التعامل مع المخالفات السلوكية.
+          </p>
+        </div>
+      </div>
     </section>
 
-    <!-- WHAT YOU’LL FIND HERE + KEY MESSAGE (TWO COLUMNS) -->
     <section class="card columns fade-up delay-2">
       <div>
-        <h2>What You’ll Find Here</h2>
+        <div class="lang-en">
+          <h2>What You’ll Find on This Site</h2>
+        </div>
+        <div class="lang-ar">
+          <h2>ماذا ستجد في هذا الموقع؟</h2>
+        </div>
+
         <ul class="info-list">
           <li><strong>About:</strong> What bullying is and how it’s different from normal conflict.</li>
           <li><strong>Impact:</strong> How bullying affects emotions, learning, and friendships.</li>
-          <li><strong>Types:</strong> Physical, verbal, social, cyber and emotional bullying.</li>
-          <li><strong>Stop Bullying:</strong> What to do if you’re a target, witness, or bully.</li>
+          <li><strong>Types:</strong> Physical, verbal, social, emotional, and cyberbullying.</li>
+          <li><strong>Stop Bullying:</strong> What to do if you’re a target, witness, or bullying others.</li>
           <li><strong>UAE Law:</strong> How the UAE responds to bullying and cyberbullying.</li>
-          <li><strong>Kinder World:</strong> Practical ideas to create a kinder school.</li>
-          <li><strong>School Policy:</strong> Levels of violations, suspensions and consequences.</li>
-          <li><strong>Pledge:</strong> Take the SAIS Kindness Pledge and help grow our school’s kindness count.</li>
+          <li><strong>Kinder World:</strong> Practical ideas for building a kind school culture.</li>
+          <li><strong>School Policy:</strong> Levels of violations, suspensions, and consequences.</li>
+          <li><strong>Pledge:</strong> Take the SAIS Kindness Pledge and join the campaign.</li>
+          <li><strong>Report:</strong> A safe place to report concerns so adults can help.</li>
         </ul>
       </div>
 
       <div class="highlight-box">
-        <h3>Key Message</h3>
-        <p>
-          Bullying is never “just a joke”. If someone feels unsafe, scared, or repeatedly targeted,
-          it is serious and deserves support. Everyone at SAIS has the right to feel safe.
-        </p>
-        <p>
-          If you are worried about yourself or someone else, talk to a trusted adult at school,
-          use the Report Bullying page, or make your commitment on the Pledge page.
-        </p>
+        <div class="lang-en">
+          <h3>Key Message</h3>
+          <p>
+            Bullying is never “just a joke”. If someone feels unsafe, scared, or repeatedly targeted,
+            it is serious and deserves support. Everyone at SAIS has the right to feel safe.
+          </p>
+        </div>
+        <div class="lang-ar">
+          <h3>رسالة أساسية</h3>
+          <p>
+            التنمّر ليس “مزاحًا”. إذا شعر أي طالب بالخوف أو بعدم الأمان أو أنه يتعرض للاستهداف بشكل متكرر،
+            فهذا أمر خطير ويستحق الدعم. لكل طالب في SAIS حق في الشعور بالأمان.
+          </p>
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER WITH CREDITS -->
   <footer>
     © 2025 SAIS Anti-Bullying Campaign<br>
     <span style="font-size:0.9rem; color:#647481;">
-      Made by: <strong>Khalid Shahin</strong>, <strong>Hassan Alaa</strong>, 
+      Made by: <strong>Khalid Shahin</strong>, <strong>Hassan Alaa</strong>,
       <strong>Saif Alaa</strong>, <strong>Mohammed Mereb</strong>
     </span>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('themeToggle');
+      const langEnBtn = document.getElementById('langEnBtn');
+      const langArBtn = document.getElementById('langArBtn');
+
+      function applyTheme(theme) {
+        if (theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      }
+
+      const savedTheme = localStorage.getItem('saisTheme') || 'light';
+      applyTheme(savedTheme);
+      if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+        themeToggle.addEventListener('click', () => {
+          const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('saisTheme', next);
+          applyTheme(next);
+          themeToggle.textContent = next === 'dark' ? '☀' : '🌙';
+        });
+      }
+
+      function applyLang(lang) {
+        if (lang === 'ar') document.body.classList.add('lang-ar');
+        else document.body.classList.remove('lang-ar');
+
+        if (langEnBtn && langArBtn) {
+          if (lang === 'ar') {
+            langArBtn.classList.add('active');
+            langEnBtn.classList.remove('active');
+          } else {
+            langEnBtn.classList.add('active');
+            langArBtn.classList.remove('active');
+          }
+        }
+      }
+
+      const savedLang = localStorage.getItem('saisLang') || 'en';
+      applyLang(savedLang);
+
+      if (langEnBtn) langEnBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'en');
+        applyLang('en');
+      });
+      if (langArBtn) langArBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'ar');
+        applyLang('ar');
+      });
+    });
+  </script>
 
 </body>
 </html>
