@@ -5,62 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SAIS Anti-Bullying – Admin Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page">
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="nav-logo">
       <a href="index.html"><img src="images.jpeg" alt="SAIS Logo"></a>
       <span>SAIS</span>
     </div>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="impact.html">Impact</a></li>
-      <li><a href="types.html">Types</a></li>
-      <li><a href="stop.html">Stop Bullying</a></li>
-      <li><a href="uae.html">UAE Law</a></li>
-      <li><a href="kinder.html">Kinder World</a></li>
-      <li><a href="policy.html">School Policy</a></li>
-      <li><a href="pledge.html">Pledge</a></li>
-      <li><a href="report.html">Report Bullying</a></li>
-      <li><a href="admin.html" class="active">Admin</a></li>
-    </ul>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="impact.html">Impact</a></li>
+        <li><a href="types.html">Types</a></li>
+        <li><a href="stop.html">Stop Bullying</a></li>
+        <li><a href="uae.html">UAE Law</a></li>
+        <li><a href="kinder.html">Kinder World</a></li>
+        <li><a href="policy.html">School Policy</a></li>
+        <li><a href="pledge.html">Pledge</a></li>
+        <li><a href="admin.html" class="active">Admin</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn">🌙 / ☀</button>
+        <button id="langEnBtn" class="nav-toggle-btn active">EN</button>
+        <button id="langArBtn" class="nav-toggle-btn">ع</button>
+      </div>
+    </div>
   </nav>
 
   <header class="hero fade-up">
-    <h1>Admin Dashboard</h1>
-    <p>Private view for staff and student leaders to track the SAIS anti-bullying campaign.</p>
-    <div class="hero-tags">
-      <span class="tag-pill">Data</span>
-      <span class="tag-pill">Progress</span>
-      <span class="tag-pill">Safeguarding</span>
+    <div class="lang-en">
+      <h1>Admin Dashboard</h1>
+      <p>Private view for staff and student leaders to track the SAIS Anti-Bullying Campaign.</p>
+    </div>
+    <div class="lang-ar">
+      <h1>لوحة تحكّم الإدارة</h1>
+      <p>عرض خاص للمعلمين وقادة الطلاب لمتابعة حملة مكافحة التنمّر في SAIS.</p>
     </div>
   </header>
 
   <main class="main-content">
 
-    <!-- Dark mode toggle -->
-    <section class="card fade-up delay-1" id="settings-card">
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;">
-        <h2 style="margin-bottom:0;">Admin Settings</h2>
-        <label class="dark-toggle">
-          <span>Dark mode</span>
-          <input type="checkbox" id="darkToggle">
-        </label>
-      </div>
-      <p class="small-note">
-        This dashboard is designed for staff and student leaders managing the SAIS Anti-Bullying Campaign.
-        Use the tools below to monitor engagement and track reporting trends.
-      </p>
-    </section>
-
-    <!-- LOGIN CARD -->
-    <section class="card fade-up delay-2" id="login-card">
+    <section class="card fade-up delay-1" id="login-card">
       <h2>Admin Access</h2>
       <p>
-        Please enter the admin passcode to unlock live statistics and controls. This is not strict security
-        but helps keep dashboard tools separate from the student-facing pages.
+        This dashboard is for staff and student leaders who are monitoring the SAIS Anti-Bullying Campaign.
+        Please enter the admin passcode to unlock the live statistics.
       </p>
 
       <div class="form-row" style="max-width:260px; margin-top:12px;">
@@ -74,16 +67,14 @@
       </p>
     </section>
 
-    <!-- DASHBOARD CARD (HIDDEN UNTIL LOGIN) -->
-    <section class="card fade-up delay-3" id="dashboard" style="display:none;">
+    <section class="card fade-up delay-2" id="dashboard" style="display:none;">
       <h2>Campaign Overview</h2>
       <p>
-        These numbers show live data from the SAIS Kindness Pledge counter on the student website and
-        locally tracked reporting statistics. Use them to guide assemblies, tutor-time discussions,
-        and whole-school actions.
+        These numbers show live data from the SAIS Kindness Pledge counter on the student website
+        and local reporting statistics. Use them to guide assemblies, tutor-time discussions, and
+        whole-school actions.
       </p>
 
-      <!-- TOP GRID: PLEDGES + GOAL + STATUS -->
       <div class="admin-grid" style="margin-top:14px;">
         <div class="stat-card">
           <h3>Total Pledges</h3>
@@ -108,18 +99,15 @@
         </div>
       </div>
 
-      <!-- SECOND GRID: LEADERBOARD + CHART -->
       <div class="admin-grid" style="margin-top:16px;">
-        <!-- Grade leaderboard -->
         <div class="stat-card">
           <h3>Grade Leaderboard</h3>
           <p class="stat-label">
-            Approximate breakdown of pledges by grade. Values can be adjusted in the code if needed.
+            Approximate breakdown of pledges by grade. These values can be adjusted in the code if needed.
           </p>
           <div class="leaderboard" id="leaderboard"></div>
         </div>
 
-        <!-- Weekly bar chart -->
         <div class="stat-card">
           <h3>Weekly Pledge Growth</h3>
           <p class="stat-label">Illustrative weekly trend based on campaign observations.</p>
@@ -130,14 +118,12 @@
         </div>
       </div>
 
-      <!-- THIRD GRID: REPORT STATS + TIMELINE -->
       <div class="admin-grid" style="margin-top:16px;">
-        <!-- Report statistics -->
         <div class="stat-card">
           <h3>Report Statistics (local)</h3>
           <p class="stat-label">
-            Track how many bullying concerns have been recorded, resolved, and remain open. These
-            values are stored only on this device (localStorage) and can be reset at any time.
+            Track how many bullying concerns have been recorded, resolved, and remain open.
+            These values are stored only on this device (localStorage) for demonstration.
           </p>
 
           <div class="form-row" style="max-width:260px; margin-top:8px;">
@@ -157,12 +143,11 @@
           </p>
         </div>
 
-        <!-- Timeline -->
         <div class="stat-card">
           <h3>Campaign Timeline</h3>
           <p class="stat-label">
-            Record key actions such as assemblies, workshops, or new resources. Entries are saved on
-            this device so you can update them over time.
+            Record key actions such as assemblies, workshops, and new resources. Entries are saved in
+            this browser so you can update them over time.
           </p>
 
           <div class="form-row" style="margin-top:8px;">
@@ -178,129 +163,25 @@
       <p class="small-note" style="margin-top:14px;">
         Note: Pledge statistics are pulled from JSONBin (shared with the student pledge page). Report
         statistics and timeline entries shown here are stored only in this browser for demonstration
-        purposes and should not replace the school’s official safeguarding records.
+        purposes and should not replace official safeguarding records.
       </p>
     </section>
 
   </main>
 
   <footer>
-    © 2024 SAIS Anti-Bullying Campaign
+    © 2025 SAIS Anti-Bullying Campaign
   </footer>
 
   <script>
-    // ========== DARK MODE ==========
-    const darkToggle = document.getElementById('darkToggle');
+    const ADMIN_CODE = 'sais2024'; // change if you want
 
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.body.classList.add('dark');
-        darkToggle.checked = true;
-      } else {
-        document.body.classList.remove('dark');
-        darkToggle.checked = false;
-      }
-    }
-
-    // Load theme
-    const savedTheme = localStorage.getItem('saisTheme') || 'light';
-    applyTheme(savedTheme);
-
-    darkToggle.addEventListener('change', () => {
-      const newTheme = darkToggle.checked ? 'dark' : 'light';
-      localStorage.setItem('saisTheme', newTheme);
-      applyTheme(newTheme);
-    });
-
-    // ========== ADMIN LOGIN ==========
-    const ADMIN_CODE = 'sais2024'; // change this to any passcode you like
-
-    const loginCard = document.getElementById('login-card');
-    const dashboard = document.getElementById('dashboard');
-    const loginBtn = document.getElementById('loginBtn');
-    const loginError = document.getElementById('loginError');
-    const adminCodeInput = document.getElementById('adminCode');
-
-    loginBtn.addEventListener('click', () => {
-      const entered = adminCodeInput.value.trim();
-      if (entered === ADMIN_CODE) {
-        loginError.style.display = 'none';
-        loginCard.style.display = 'none';
-        dashboard.style.display = 'block';
-        loadStats();
-      } else {
-        loginError.style.display = 'block';
-      }
-    });
-
-    adminCodeInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        loginBtn.click();
-      }
-    });
-
-    // ========== JSONBIN PLEDGE STATS ==========
-    // 🔹 COPY THESE FROM pledge.html 🔹
-    const BIN_ID = '691b514743b1c97be9b38322';          // e.g. '66f1234567890abcd'
-    const MASTER_KEY = '$2a$10$/HRjC7rGM4sRC4wsfJKDI.T.KHbT8LLqWuBQ9YpXZafxgoQTvPhnW';  // your JSONBin X-Master-Key
+    // JSONBin config – same BIN as pledge.html
+    const BIN_ID = '691b514743b1c97be9b38322';
+    const MASTER_KEY = '$2a$10$/HRjC7rGM4sRC4wsfJKDI.T.KHbT8LLqWuBQ9YpXZafxgoQTvPhnW';
     const BIN_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
-    const TARGET_PLEDGES = 200; // adjust target if needed
+    const TARGET_PLEDGES = 200;
 
-    const statTotal = document.getElementById('statTotal');
-    const progressFill = document.getElementById('progressFill');
-    const progressPercent = document.getElementById('progressPercent');
-    const targetNumber = document.getElementById('targetNumber');
-    const statusText = document.getElementById('statusText');
-
-    targetNumber.textContent = TARGET_PLEDGES;
-
-    async function loadStats() {
-      await loadPledges();
-      renderLeaderboard();
-      renderChart();
-      loadReportStats();
-      loadTimeline();
-    }
-
-    async function loadPledges() {
-      try {
-        const res = await fetch(BIN_URL, {
-          headers: {
-            'X-Master-Key': MASTER_KEY
-          }
-        });
-        const data = await res.json();
-        const total = (data.record && typeof data.record.pledges === 'number')
-          ? data.record.pledges
-          : 0;
-
-        statTotal.textContent = total;
-
-        const percent = Math.max(0, Math.min(100, Math.round((total / TARGET_PLEDGES) * 100)));
-        progressPercent.textContent = percent;
-        progressFill.style.width = percent + '%';
-
-        if (total === 0) {
-          statusText.textContent = 'Campaign has not started yet. Encourage students to take the pledge.';
-        } else if (percent < 35) {
-          statusText.textContent = 'Good start. Promote the pledge in assemblies and tutor time.';
-        } else if (percent < 75) {
-          statusText.textContent = 'Strong progress. Keep reminding classes to participate.';
-        } else if (percent < 100) {
-          statusText.textContent = 'Amazing engagement! You are very close to meeting the target.';
-        } else {
-          statusText.textContent = 'Target reached! Consider setting a new goal and celebrating this achievement.';
-        }
-
-      } catch (err) {
-        console.error('Error loading pledges:', err);
-        statusText.textContent = 'Unable to load pledge data. Please check your internet connection or JSONBin settings.';
-      }
-    }
-
-    // ========== GRADE LEADERBOARD (STATIC SAMPLE DATA) ==========
-    const leaderboardEl = document.getElementById('leaderboard');
-    // You can adjust these numbers if your school tracks real pledges by grade
     const gradeData = [
       { grade: 'Grade 8', pledges: 32 },
       { grade: 'Grade 9', pledges: 51 },
@@ -309,52 +190,6 @@
       { grade: 'Grade 12', pledges: 29 },
     ];
 
-    function renderLeaderboard() {
-      // Sort descending by pledges
-      const sorted = [...gradeData].sort((a,b) => b.pledges - a.pledges);
-      leaderboardEl.innerHTML = '';
-      sorted.forEach((row, index) => {
-        const div = document.createElement('div');
-        div.className = 'leader-row';
-
-        const left = document.createElement('div');
-        left.style.display = 'flex';
-        left.style.alignItems = 'center';
-
-        const rank = document.createElement('span');
-        rank.className = 'leader-rank';
-        rank.textContent = index + 1;
-
-        const gradeSpan = document.createElement('span');
-        gradeSpan.className = 'leader-grade';
-        gradeSpan.textContent = row.grade;
-
-        left.appendChild(rank);
-        left.appendChild(gradeSpan);
-
-        const right = document.createElement('div');
-        right.className = 'leader-count';
-        right.textContent = row.pledges + ' pledges';
-
-        if (index === 0) {
-          const badge = document.createElement('span');
-          badge.className = 'badge';
-          badge.textContent = 'Leading';
-          right.appendChild(document.createTextNode(' '));
-          right.appendChild(badge);
-        }
-
-        div.appendChild(left);
-        div.appendChild(right);
-        leaderboardEl.appendChild(div);
-      });
-    }
-
-    // ========== WEEKLY BAR CHART (STATIC SAMPLE DATA) ==========
-    const chartBarsEl = document.getElementById('chartBars');
-    const chartLabelsEl = document.getElementById('chartLabels');
-
-    // Example weekly data – adjust if you gather real weekly stats
     const weeklyData = [
       { label:'Week 1', value:18 },
       { label:'Week 2', value:32 },
@@ -362,144 +197,311 @@
       { label:'Week 4', value:63 },
     ];
 
-    function renderChart() {
-      chartBarsEl.innerHTML = '';
-      chartLabelsEl.innerHTML = '';
-
-      const maxVal = Math.max(...weeklyData.map(d => d.value), 10);
-      weeklyData.forEach(d => {
-        const bar = document.createElement('div');
-        bar.className = 'chart-bar';
-        const heightPercent = (d.value / maxVal) * 100;
-        bar.style.height = heightPercent + '%';
-
-        const valueLabel = document.createElement('span');
-        valueLabel.textContent = d.value;
-        bar.appendChild(valueLabel);
-
-        chartBarsEl.appendChild(bar);
-
-        const label = document.createElement('div');
-        label.textContent = d.label;
-        chartLabelsEl.appendChild(label);
-      });
-    }
-
-    // ========== REPORT STATISTICS (LOCAL STORAGE ONLY) ==========
-    const reportsTotalInput = document.getElementById('reportsTotal');
-    const reportsResolvedInput = document.getElementById('reportsResolved');
-    const reportsOpenSpan = document.getElementById('reportsOpen');
-    const saveReportsBtn = document.getElementById('saveReports');
-    const resetReportsBtn = document.getElementById('resetReports');
-
     const REPORT_KEY = 'saisReportStats';
-
-    function loadReportStats() {
-      const saved = localStorage.getItem(REPORT_KEY);
-      let stats = { total: 0, resolved: 0 };
-      if (saved) {
-        try {
-          stats = JSON.parse(saved);
-        } catch (e) {
-          console.error('Error parsing report stats:', e);
-        }
-      }
-      reportsTotalInput.value = stats.total;
-      reportsResolvedInput.value = stats.resolved;
-      updateReportsOpen();
-    }
-
-    function updateReportsOpen() {
-      const total = parseInt(reportsTotalInput.value || '0', 10);
-      const resolved = parseInt(reportsResolvedInput.value || '0', 10);
-      const open = Math.max(0, total - resolved);
-      reportsOpenSpan.textContent = open;
-    }
-
-    saveReportsBtn.addEventListener('click', () => {
-      const total = parseInt(reportsTotalInput.value || '0', 10);
-      const resolved = parseInt(reportsResolvedInput.value || '0', 10);
-      const stats = { total, resolved };
-      localStorage.setItem(REPORT_KEY, JSON.stringify(stats));
-      updateReportsOpen();
-    });
-
-    resetReportsBtn.addEventListener('click', () => {
-      localStorage.removeItem(REPORT_KEY);
-      reportsTotalInput.value = 0;
-      reportsResolvedInput.value = 0;
-      updateReportsOpen();
-    });
-
-    reportsTotalInput.addEventListener('input', updateReportsOpen);
-    reportsResolvedInput.addEventListener('input', updateReportsOpen);
-
-    // ========== TIMELINE (LOCAL STORAGE ONLY) ==========
-    const timelineInput = document.getElementById('timelineText');
-    const addTimelineBtn = document.getElementById('addTimeline');
-    const timelineList = document.getElementById('timelineList');
-
     const TIMELINE_KEY = 'saisTimelineEntries';
 
-    function loadTimeline() {
-      const saved = localStorage.getItem(TIMELINE_KEY);
-      let entries = [];
-      if (saved) {
-        try {
-          entries = JSON.parse(saved);
-        } catch (e) {
-          console.error('Error parsing timeline:', e);
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('themeToggle');
+      const langEnBtn = document.getElementById('langEnBtn');
+      const langArBtn = document.getElementById('langArBtn');
+
+      const loginCard = document.getElementById('login-card');
+      const dashboard = document.getElementById('dashboard');
+      const loginBtn = document.getElementById('loginBtn');
+      const loginError = document.getElementById('loginError');
+      const adminCodeInput = document.getElementById('adminCode');
+
+      const statTotal = document.getElementById('statTotal');
+      const progressFill = document.getElementById('progressFill');
+      const progressPercent = document.getElementById('progressPercent');
+      const targetNumber = document.getElementById('targetNumber');
+      const statusText = document.getElementById('statusText');
+
+      const leaderboardEl = document.getElementById('leaderboard');
+      const chartBarsEl = document.getElementById('chartBars');
+      const chartLabelsEl = document.getElementById('chartLabels');
+
+      const reportsTotalInput = document.getElementById('reportsTotal');
+      const reportsResolvedInput = document.getElementById('reportsResolved');
+      const reportsOpenSpan = document.getElementById('reportsOpen');
+      const saveReportsBtn = document.getElementById('saveReports');
+      const resetReportsBtn = document.getElementById('resetReports');
+
+      const timelineInput = document.getElementById('timelineText');
+      const addTimelineBtn = document.getElementById('addTimeline');
+      const timelineList = document.getElementById('timelineList');
+
+      // THEME
+      function applyTheme(theme) {
+        if (theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      }
+      const savedTheme = localStorage.getItem('saisTheme') || 'light';
+      applyTheme(savedTheme);
+      if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+        themeToggle.addEventListener('click', () => {
+          const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('saisTheme', next);
+          applyTheme(next);
+          themeToggle.textContent = next === 'dark' ? '☀' : '🌙';
+        });
+      }
+
+      // LANGUAGE
+      function applyLang(lang) {
+        if (lang === 'ar') document.body.classList.add('lang-ar');
+        else document.body.classList.remove('lang-ar');
+
+        if (langEnBtn && langArBtn) {
+          if (lang === 'ar') {
+            langArBtn.classList.add('active');
+            langEnBtn.classList.remove('active');
+          } else {
+            langEnBtn.classList.add('active');
+            langArBtn.classList.remove('active');
+          }
         }
       }
-      renderTimeline(entries);
-    }
-
-    function renderTimeline(entries) {
-      timelineList.innerHTML = '';
-      if (!entries.length) {
-        const empty = document.createElement('p');
-        empty.className = 'small-note';
-        empty.textContent = 'No timeline entries yet. Add your first action above.';
-        timelineList.appendChild(empty);
-        return;
-      }
-
-      entries.forEach(item => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'timeline-item';
-
-        const date = document.createElement('div');
-        date.className = 'timeline-date';
-        date.textContent = item.date;
-
-        const text = document.createElement('div');
-        text.className = 'timeline-text';
-        text.textContent = item.text;
-
-        wrapper.appendChild(date);
-        wrapper.appendChild(text);
-        timelineList.appendChild(wrapper);
+      const savedLang = localStorage.getItem('saisLang') || 'en';
+      applyLang(savedLang);
+      if (langEnBtn) langEnBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'en');
+        applyLang('en');
       });
-    }
+      if (langArBtn) langArBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'ar');
+        applyLang('ar');
+      });
 
-    addTimelineBtn.addEventListener('click', () => {
-      const text = timelineInput.value.trim();
-      if (!text) return;
-      const saved = localStorage.getItem(TIMELINE_KEY);
-      let entries = [];
-      if (saved) {
+      // LOGIN
+      loginBtn.addEventListener('click', () => {
+        const entered = adminCodeInput.value.trim();
+        if (entered === ADMIN_CODE) {
+          loginError.style.display = 'none';
+          loginCard.style.display = 'none';
+          dashboard.style.display = 'block';
+          initDashboard();
+        } else {
+          loginError.style.display = 'block';
+        }
+      });
+      adminCodeInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') loginBtn.click();
+      });
+
+      // DASHBOARD INIT
+      async function initDashboard() {
+        targetNumber.textContent = TARGET_PLEDGES;
+        await loadPledges();
+        renderLeaderboard();
+        renderChart();
+        loadReportStats();
+        loadTimeline();
+      }
+
+      async function loadPledges() {
         try {
-          entries = JSON.parse(saved);
-        } catch (e) {
-          console.error('Error parsing timeline:', e);
+          const res = await fetch(BIN_URL, {
+            headers: { 'X-Master-Key': MASTER_KEY }
+          });
+          const data = await res.json();
+          const total = (data.record && typeof data.record.pledges === 'number')
+            ? data.record.pledges
+            : 0;
+
+          statTotal.textContent = total;
+
+          const percent = Math.max(0, Math.min(100, Math.round((total / TARGET_PLEDGES) * 100)));
+          progressPercent.textContent = percent;
+          progressFill.style.width = percent + '%';
+
+          if (total === 0) {
+            statusText.textContent = 'Campaign has not started yet. Encourage students to take the pledge.';
+          } else if (percent < 35) {
+            statusText.textContent = 'Good start. Promote the pledge in assemblies and tutor time.';
+          } else if (percent < 75) {
+            statusText.textContent = 'Strong progress. Keep reminding classes to participate.';
+          } else if (percent < 100) {
+            statusText.textContent = 'Amazing engagement! You are very close to meeting the target.';
+          } else {
+            statusText.textContent = 'Target reached! Consider setting a new goal and celebrating this achievement.';
+          }
+
+        } catch (err) {
+          console.error('Error loading pledge data:', err);
+          statusText.textContent = 'Unable to load pledge data. Please check your connection or JSONBin settings.';
         }
       }
-      const now = new Date();
-      const dateStr = now.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
-      entries.unshift({ date: dateStr, text });
-      localStorage.setItem(TIMELINE_KEY, JSON.stringify(entries));
-      timelineInput.value = '';
-      renderTimeline(entries);
+
+      // LEADERBOARD
+      function renderLeaderboard() {
+        const sorted = [...gradeData].sort((a, b) => b.pledges - a.pledges);
+        leaderboardEl.innerHTML = '';
+        sorted.forEach((row, index) => {
+          const div = document.createElement('div');
+          div.className = 'leader-row';
+
+          const left = document.createElement('div');
+          left.style.display = 'flex';
+          left.style.alignItems = 'center';
+
+          const rank = document.createElement('span');
+          rank.className = 'leader-rank';
+          rank.textContent = index + 1;
+
+          const gradeSpan = document.createElement('span');
+          gradeSpan.className = 'leader-grade';
+          gradeSpan.textContent = row.grade;
+
+          left.appendChild(rank);
+          left.appendChild(gradeSpan);
+
+          const right = document.createElement('div');
+          right.className = 'leader-count';
+          right.textContent = row.pledges + ' pledges';
+
+          if (index === 0) {
+            const badge = document.createElement('span');
+            badge.className = 'badge';
+            badge.textContent = 'Leading';
+            right.appendChild(document.createTextNode(' '));
+            right.appendChild(badge);
+          }
+
+          div.appendChild(left);
+          div.appendChild(right);
+          leaderboardEl.appendChild(div);
+        });
+      }
+
+      // WEEKLY CHART
+      function renderChart() {
+        chartBarsEl.innerHTML = '';
+        chartLabelsEl.innerHTML = '';
+
+        const maxVal = Math.max(...weeklyData.map(d => d.value), 10);
+        weeklyData.forEach(d => {
+          const bar = document.createElement('div');
+          bar.className = 'chart-bar';
+          const heightPercent = (d.value / maxVal) * 100;
+          bar.style.height = heightPercent + '%';
+
+          const valueLabel = document.createElement('span');
+          valueLabel.textContent = d.value;
+          bar.appendChild(valueLabel);
+
+          chartBarsEl.appendChild(bar);
+
+          const label = document.createElement('div');
+          label.textContent = d.label;
+          chartLabelsEl.appendChild(label);
+        });
+      }
+
+      // REPORT STATS
+      function loadReportStats() {
+        const saved = localStorage.getItem(REPORT_KEY);
+        let stats = { total: 0, resolved: 0 };
+        if (saved) {
+          try {
+            stats = JSON.parse(saved);
+          } catch (e) {
+            console.error('Error parsing report stats:', e);
+          }
+        }
+        reportsTotalInput.value = stats.total;
+        reportsResolvedInput.value = stats.resolved;
+        updateReportsOpen();
+      }
+
+      function updateReportsOpen() {
+        const total = parseInt(reportsTotalInput.value || '0', 10);
+        const resolved = parseInt(reportsResolvedInput.value || '0', 10);
+        const open = Math.max(0, total - resolved);
+        reportsOpenSpan.textContent = open;
+      }
+
+      saveReportsBtn.addEventListener('click', () => {
+        const total = parseInt(reportsTotalInput.value || '0', 10);
+        const resolved = parseInt(reportsResolvedInput.value || '0', 10);
+        const stats = { total, resolved };
+        localStorage.setItem(REPORT_KEY, JSON.stringify(stats));
+        updateReportsOpen();
+      });
+
+      resetReportsBtn.addEventListener('click', () => {
+        localStorage.removeItem(REPORT_KEY);
+        reportsTotalInput.value = 0;
+        reportsResolvedInput.value = 0;
+        updateReportsOpen();
+      });
+
+      reportsTotalInput.addEventListener('input', updateReportsOpen);
+      reportsResolvedInput.addEventListener('input', updateReportsOpen);
+
+      // TIMELINE
+      function loadTimeline() {
+        const saved = localStorage.getItem(TIMELINE_KEY);
+        let entries = [];
+        if (saved) {
+          try {
+            entries = JSON.parse(saved);
+          } catch (e) {
+            console.error('Error parsing timeline:', e);
+          }
+        }
+        renderTimeline(entries);
+      }
+
+      function renderTimeline(entries) {
+        timelineList.innerHTML = '';
+        if (!entries.length) {
+          const empty = document.createElement('p');
+          empty.className = 'small-note';
+          empty.textContent = 'No timeline entries yet. Add your first action above.';
+          timelineList.appendChild(empty);
+          return;
+        }
+
+        entries.forEach(item => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'timeline-item';
+
+          const date = document.createElement('div');
+          date.className = 'timeline-date';
+          date.textContent = item.date;
+
+          const text = document.createElement('div');
+          text.className = 'timeline-text';
+          text.textContent = item.text;
+
+          wrapper.appendChild(date);
+          wrapper.appendChild(text);
+          timelineList.appendChild(wrapper);
+        });
+      }
+
+      addTimelineBtn.addEventListener('click', () => {
+        const text = timelineInput.value.trim();
+        if (!text) return;
+        const saved = localStorage.getItem(TIMELINE_KEY);
+        let entries = [];
+        if (saved) {
+          try {
+            entries = JSON.parse(saved);
+          } catch (e) {
+            console.error('Error parsing timeline:', e);
+          }
+        }
+        const now = new Date();
+        const dateStr = now.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+        entries.unshift({ date: dateStr, text });
+        localStorage.setItem(TIMELINE_KEY, JSON.stringify(entries));
+        timelineInput.value = '';
+        renderTimeline(entries);
+      });
     });
   </script>
 
