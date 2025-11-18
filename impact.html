@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impact of Bullying – SAIS</title>
+  <title>The Impact of Bullying – SAIS Anti-Bullying Campaign</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body class="page">
 
@@ -13,70 +14,178 @@
       <a href="index.html"><img src="images.jpeg" alt="SAIS Logo"></a>
       <span>SAIS</span>
     </div>
-    <ul class="nav-links">
-  <li><a href="about.html">About</a></li>
-  <li><a href="impact.html">Impact</a></li>
-  <li><a href="types.html">Types</a></li>
-  <li><a href="stop.html">Stop Bullying</a></li>
-  <li><a href="uae.html">UAE Law</a></li>
-  <li><a href="kinder.html">Kinder World</a></li>
-  <li><a href="policy.html">School Policy</a></li>
-  <li><a href="pledge.html">Pledge</a></li>
-</ul>
+
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="impact.html" class="active">Impact</a></li>
+        <li><a href="types.html">Types</a></li>
+        <li><a href="stop.html">Stop Bullying</a></li>
+        <li><a href="uae.html">UAE Law</a></li>
+        <li><a href="kinder.html">Kinder World</a></li>
+        <li><a href="policy.html">School Policy</a></li>
+        <li><a href="pledge.html">Pledge</a></li>
+        <li><a href="report.html">Report Bullying</a></li>
+        <li><a href="admin.html">Admin</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn">🌙 / ☀</button>
+        <button id="langEnBtn" class="nav-toggle-btn active">EN</button>
+        <button id="langArBtn" class="nav-toggle-btn">ع</button>
+      </div>
+    </div>
   </nav>
 
   <header class="hero fade-up">
-    <h1>How Bullying Affects People</h1>
-    <p>Bullying leaves marks we can’t always see. Its impact can last for years.</p>
+    <div class="lang-en">
+      <h1>The Impact of Bullying</h1>
+      <p>Bullying leaves scars you can’t always see — emotional, social, and mental.</p>
+    </div>
+    <div class="lang-ar">
+      <h1>تأثير التنمّر</h1>
+      <p>آثار التنمّر ليست دائمًا ظاهرة، لكنها تؤثر على المشاعر والعلاقات والصحة النفسية.</p>
+    </div>
   </header>
 
   <main class="main-content">
+
     <section class="card columns fade-up delay-1">
       <div>
-        <img src="sad-child.jpg"
-             alt="Sad child holding their face, showing emotional impact of bullying"
-             style="width:100%; border-radius:14px; margin-bottom:12px;">
-        <h2>Emotional and Mental Health</h2>
-        <p>
-          Victims of bullying often feel sad, lonely, or afraid. Many lose confidence in
-          themselves and start to believe the negative things being said about them.
-        </p>
-        <p>
-          Over time, this can lead to anxiety, depression, or other mental health struggles.
-          Some people may withdraw from friends, stop joining activities they enjoyed, or
-          avoid school altogether.
-        </p>
+        <img src="sad-child.jpg" alt="Student feeling upset" class="poster-img">
       </div>
-      <div class="highlight-box">
-        <h3>Signs Someone Might Be Struggling</h3>
-        <ul>
-          <li>Sudden changes in mood or behaviour</li>
-          <li>Wanting to miss school or fake illness</li>
-          <li>Difficulty sleeping or frequent nightmares</li>
-          <li>Loss of interest in hobbies or friends</li>
-        </ul>
+      <div>
+        <div class="lang-en">
+          <h2>Emotional and Social Effects</h2>
+          <p>
+            The effects of bullying can be long-lasting and deeply damaging. Victims often feel sad,
+            lonely, or afraid, and many lose confidence in themselves. It can also make it harder to
+            focus in school or enjoy activities they once loved.
+          </p>
+          <p>
+            Over time, the emotional pain caused by bullying can lead to anxiety, depression, or other
+            mental health struggles that may continue into adulthood.
+          </p>
+        </div>
+        <div class="lang-ar">
+          <h2>الآثار العاطفية والاجتماعية</h2>
+          <p>
+            يمكن أن تكون آثار التنمّر طويلة الأمد ومؤذية للغاية. غالبًا ما يشعر المتنمَّر عليهم بالحزن
+            أو الوحدة أو الخوف، ويفقد الكثير منهم الثقة بأنفسهم. كما يصبح من الصعب عليهم التركيز في الدراسة
+            أو الاستمتاع بالأنشطة التي كانوا يحبونها.
+          </p>
+          <p>
+            مع مرور الوقت، قد يؤدي الألم النفسي الناتج عن التنمّر إلى القلق أو الاكتئاب أو مشكلات أخرى
+            في الصحة النفسية تستمر حتى مرحلة البلوغ.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="card fade-up delay-2">
-      <h2>School, Friendships and the Future</h2>
-      <p>
-        Bullying affects more than just feelings. It can make it hard to concentrate in class,
-        complete homework, or take part in group work. Some students see their grades drop
-        because they are constantly stressed or distracted.
-      </p>
-      <p>
-        Bullying can also damage trust. Victims may find it difficult to make new friends or
-        trust teachers and adults, even after the bullying stops. Without support, these
-        experiences can continue to affect a person’s confidence and relationships well into adulthood.
-      </p>
-      <p>
-        Bullies and bystanders are affected too. Bullies who are not challenged may continue using
-        aggression in other relationships, while bystanders can feel guilty for not speaking up.
-      </p>
+    <section class="card columns fade-up delay-2">
+      <div>
+        <div class="lang-en">
+          <h2>Impact on Everyone Involved</h2>
+          <p>
+            Bullying doesn’t just harm the person being targeted — it affects everyone involved.
+          </p>
+          <ul>
+            <li><strong>Targets:</strong> may feel unsafe, embarrassed, or trapped.</li>
+            <li><strong>People who bully:</strong> may develop harmful behaviour patterns that continue later in life.</li>
+            <li><strong>Bystanders:</strong> may feel guilty, scared, or unsure how to help.</li>
+          </ul>
+        </div>
+        <div class="lang-ar">
+          <h2>تأثيره على جميع الأطراف</h2>
+          <p>
+            لا يؤذي التنمّر الضحية فقط – بل يؤثر على كل من يشارك فيه أو يشاهده.
+          </p>
+          <ul>
+            <li><strong>الضحية:</strong> قد يشعر بعدم الأمان أو الإحراج أو العجز.</li>
+            <li><strong>المتنمّر:</strong> قد يطوّر أنماط سلوك عدوانية تستمر لاحقًا في الحياة.</li>
+            <li><strong>المتفرّجون:</strong> قد يشعرون بالذنب أو الخوف أو الحيرة حول كيفية المساعدة.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <div class="lang-en">
+          <h3>Why Speaking Up Matters</h3>
+          <p>
+            When bullying is ignored, it usually gets worse. When it is reported and challenged,
+            people feel safer and supported. At SAIS, we want students to know that asking for
+            help is a sign of strength, not weakness.
+          </p>
+        </div>
+        <div class="lang-ar">
+          <h3>لماذا من المهم الإبلاغ عن التنمّر؟</h3>
+          <p>
+            عندما يتم تجاهل التنمّر، فإنه غالبًا ما يزداد سوءًا. أما عند الإبلاغ عنه ومواجهته،
+            يشعر الطلاب بمزيد من الأمان والدعم. في SAIS نريد أن يعرف الطلاب أن طلب المساعدة
+            هو قوة وليس ضعفًا.
+          </p>
+        </div>
+      </div>
     </section>
+
   </main>
 
-    <footer>© 2025 SAIS Anti-Bullying Campaign</footer>
+  <footer>
+    © 2025 SAIS Anti-Bullying Campaign
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('themeToggle');
+      const langEnBtn = document.getElementById('langEnBtn');
+      const langArBtn = document.getElementById('langArBtn');
+
+      function applyTheme(theme) {
+        if (theme === 'dark') document.body.classList.add('dark');
+        else document.body.classList.remove('dark');
+      }
+
+      const savedTheme = localStorage.getItem('saisTheme') || 'light';
+      applyTheme(savedTheme);
+      if (themeToggle) {
+        themeToggle.textContent = savedTheme === 'dark' ? '☀' : '🌙';
+        themeToggle.addEventListener('click', () => {
+          const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+          const next = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('saisTheme', next);
+          applyTheme(next);
+          themeToggle.textContent = next === 'dark' ? '☀' : '🌙';
+        });
+      }
+
+      function applyLang(lang) {
+        if (lang === 'ar') document.body.classList.add('lang-ar');
+        else document.body.classList.remove('lang-ar');
+
+        if (langEnBtn && langArBtn) {
+          if (lang === 'ar') {
+            langArBtn.classList.add('active');
+            langEnBtn.classList.remove('active');
+          } else {
+            langEnBtn.classList.add('active');
+            langArBtn.classList.remove('active');
+          }
+        }
+      }
+
+      const savedLang = localStorage.getItem('saisLang') || 'en';
+      applyLang(savedLang);
+
+      if (langEnBtn) langEnBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'en');
+        applyLang('en');
+      });
+      if (langArBtn) langArBtn.addEventListener('click', () => {
+        localStorage.setItem('saisLang', 'ar');
+        applyLang('ar');
+      });
+    });
+  </script>
+
 </body>
 </html>
