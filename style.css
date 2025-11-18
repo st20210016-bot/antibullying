@@ -1,6 +1,6 @@
 /* ===========================
    SAIS Anti-Bullying Campaign
-   Global Styles - SAIS Teal Theme + Navbar Animation
+   Global Styles - SAIS Theme + Dark Mode + Admin
    =========================== */
 
 :root {
@@ -110,6 +110,13 @@ body.page {
   letter-spacing:0.1em;
 }
 
+.nav-right {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
 .nav-links{
   list-style:none;
   display:flex;
@@ -126,7 +133,6 @@ body.page {
   transition:color 0.2s ease-out, transform 0.2s ease-out;
 }
 
-/* animated underline */
 .nav-links a::after{
   content:"";
   position:absolute;
@@ -156,6 +162,68 @@ body.page {
   width:100%;
 }
 
+.nav-controls {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.nav-toggle-btn {
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.8);
+  background:#f8fafc;
+  font-size:0.78rem;
+  padding:4px 10px;
+  cursor:pointer;
+  color:var(--text-muted);
+  font-weight:600;
+  transition:background 0.2s ease-out, color 0.2s ease-out, border-color 0.2s ease-out, transform 0.15s ease-out;
+}
+
+.nav-toggle-btn:hover {
+  background:#e2f3f6;
+  color:var(--sais-dark);
+  transform:translateY(-1px);
+}
+
+.nav-toggle-btn.active {
+  background:var(--sais-teal);
+  color:#ffffff;
+  border-color:var(--sais-teal);
+}
+
+/* ======================
+   LANGUAGE VISIBILITY
+   ====================== */
+
+.lang-en,
+.lang-ar {
+  display:block;
+}
+
+/* default: English */
+.lang-ar {
+  display:none;
+}
+
+body.lang-ar .lang-en {
+  display:none;
+}
+
+body.lang-ar .lang-ar {
+  display:block;
+}
+
+.inline-lang {
+  display:inline;
+}
+body.lang-ar .inline-lang.en {
+  display:none;
+}
+body.lang-ar .inline-lang.ar {
+  display:inline;
+}
+
 /* ======================
    HERO
    ====================== */
@@ -179,8 +247,6 @@ body.page {
   max-width:640px;
   margin:8px auto 0;
 }
-
-/* hero tags (chips) */
 
 .hero-tags{
   margin-top:12px;
@@ -240,16 +306,12 @@ body.page {
   margin-bottom:4px;
 }
 
-/* columns layout */
-
 .columns {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
   align-items:flex-start;
 }
-
-/* highlight info box */
 
 .highlight-box{
   background:#f4fafb;
@@ -258,8 +320,6 @@ body.page {
   border:1px solid rgba(15,118,132,0.25);
 }
 
-/* callout (used on UAE / policy page) */
-
 .callout{
   margin-top:12px;
   padding:12px 14px;
@@ -267,8 +327,6 @@ body.page {
   background:#e7f5f8;
   border:1px solid rgba(15,118,132,0.35);
 }
-
-/* simple table for policy page */
 
 .policy-table{
   width:100%;
@@ -290,8 +348,6 @@ body.page {
   text-align:left;
 }
 
-/* info bullet styling on home */
-
 .info-list {
   list-style-type: disc;
   padding-left: 24px;
@@ -305,14 +361,14 @@ body.page {
 }
 
 /* ======================
-   POSTER IMAGES
+   MEDIA / IMAGES
    ====================== */
 
 .poster-img {
   width:100%;
   max-width:340px;
   max-height:340px;
-  object-fit:contain;
+  object-fit:cover;
   border-radius:14px;
   display:block;
   margin:0 auto 14px auto;
@@ -462,8 +518,6 @@ body.page {
   margin-top: 2px;
 }
 
-/* progress bar for goal */
-
 .progress-bar {
   width: 100%;
   height: 14px;
@@ -518,8 +572,6 @@ body.page {
 .leader-count {
   font-weight:600;
 }
-
-/* badges */
 
 .badge {
   display:inline-block;
@@ -603,23 +655,8 @@ body.page {
   font-size:0.9rem;
 }
 
-/* dark mode toggle */
-
-.dark-toggle {
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-size:0.9rem;
-  color:var(--text-muted);
-}
-
-.dark-toggle input {
-  width:40px;
-  height:20px;
-}
-
 /* ======================
-   SIMPLE FADE-UP ANIMATION
+   ANIMATION
    ====================== */
 
 .fade-up{
